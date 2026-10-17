@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOID</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, #242424 0%, #080808 45%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    animation: appear 1.2s ease;
+}
+
+.finger {
+    font-size: 180px;
+    filter:
+        drop-shadow(0 0 10px #fff)
+        drop-shadow(0 0 25px #8a2be2)
+        drop-shadow(0 0 60px #8a2be2);
+    animation: float 2.5s ease-in-out infinite;
+    user-select: none;
+}
+
+.title {
+    margin-top: 15px;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow:
+        0 0 8px #fff,
+        0 0 20px #8a2be2,
+        0 0 40px #8a2be2;
+}
+
+.subtitle {
+    margin-top: 10px;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 5px;
+}
+
+.line {
+    width: 180px;
+    height: 2px;
+    margin: 20px auto;
+    background: linear-gradient(90deg, transparent, #8a2be2, transparent);
+    box-shadow: 0 0 15px #8a2be2;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-18px) scale(1.04);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="finger">🖕</div>
+
+    <div class="line"></div>
+
+    <div class="title">ZEE</div>
+
+    <div class="subtitle">Fuck you</div>
+</div>
+
+</body>
+</html>
